@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+.box-main{
+  width: 60%;
+  margin: auto;
+  padding-top: 5%;
+}
+
+.paraHeading{
+  color: #dddddd;
+  font-size: xx-large;
+  font-family: Inter;
+  font-weight: 600;
+}
+
+.paraText{
+  color: #dddddd;
+  font-size:medium;
+  font-family: Inter;
+  font-weight: 400;
+}
