@@ -6,16 +6,24 @@ import './navBar.css'
 class NavBar extends React.Component {
   render() { 
     return(
-      <ul className="nav-list">
-        <div className="logo"><img src={ logo } alt="logo"/></div>
-        <li><Link to='/'><p>Home</p></Link></li>
-        <li><a href="#clubs">Clubs</a></li>
-        <li><a href="#food">Food</a></li>
-        <li><a href="#issues">Issues</a></li>
-        <li><a href="#spaces">Spaces</a></li>
-        <li><Link to='/pesucoin'><p>PesuCoin</p></Link></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <>
+        <ul className="nav-list">
+          <div className="logo"><img src={ logo } alt="logo"/></div>
+          <Link to='/'><li><p className="nav-list-resp">Home</p></li></Link>
+          <Link to='/'><li><p className="nav-list-resp">Clubs</p></li></Link>
+          <Link to='/'><li><p className="nav-list-resp">Food</p></li></Link>
+          <Link to='/'><li><p className="nav-list-resp">Issues</p></li></Link>
+          <Link to='/'><li><p className="nav-list-resp">Spaces</p></li></Link>
+          <Link to='/pesucoin'><li><p className="nav-list-resp">PesuCoin</p></li></Link>
+          <Link to='/'><li><p className="nav-list-resp">Contact</p></li></Link>
+        </ul>
+
+        <div className="burger" onClick={this.props.dropNav}>
+          <div className="line"></div>
+          <div className="line"></div>
+          <div className="line"></div>
+        </div>
+      </>
     );
   }
 }

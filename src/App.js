@@ -6,11 +6,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from './Pages/Home/home';
 
 class App extends React.Component {
+  dropNav = () => {
+    document.querySelector('nav').classList.toggle('nav-resp');
+    var li = document.querySelectorAll('li p');
+    for(var i = 0; i < li.length; i++){
+      li[i].classList.toggle('nav-list-resp');
+    }
+  }
+
   render() { 
     return (
       <Router>
         <nav className="navbar">
-          <NavBar/>
+          <NavBar dropNav={this.dropNav}/>
         </nav>
         <section id="section" className="section">
           <Routes>
