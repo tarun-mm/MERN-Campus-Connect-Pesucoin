@@ -17,21 +17,21 @@
 
 .nav-list li{
   list-style: none;
-  margin: 16px 16px;
+  margin: 16px 8px;
   padding: 16px 32px;
 }
 
 .nav-list li:active{
   list-style: none;
   border-radius: 16px;
-  background-color: #444444;
-  margin: 16px 16px;
+  background-color: #3E065F;
+  margin: 16px 8px;
   padding: 16px 32px;
 }
 
 .nav-list a{
   text-decoration: none;
-  color: #B1B1B1;
+  color: #c58799;
   font-family: 'Inter';
   font-weight: 600;
   font-size: 20px;
@@ -39,7 +39,7 @@
 
 .nav-list a:hover{
   text-decoration: none;
-  color: #fdfdfd;
+  color: #E63E6D;
   font-family: Inter;
   font-weight: 600;
   font-size: 20px;
@@ -49,17 +49,18 @@
   display: none;
   position: absolute;
   right: 5%;
-  top: 24px;
+  top: 22px;
 }
 
 .line{
   width: 32px;
   background-color: white;
   height: 4px;
-  margin: 3px;
+  margin: 4px;
+  border-radius: 2px;
 }
 
-@media only screen and (max-width: 1320px){
+@media only screen and (max-width: 1200px){
   .nav-list{
     flex-direction: column;
   }

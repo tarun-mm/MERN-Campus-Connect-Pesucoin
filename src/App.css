@@ -11,12 +11,14 @@
   position: sticky;
 }
 
-@media only screen and (max-width: 1320px){
+@media only screen and (max-width: 1200px){
   .navbar{
     height: 72px;
+    transition: height 1.5s;
   }
 
   .nav-resp{
     height: 500px;
+    transition: height 1.5s;
   }
 }
