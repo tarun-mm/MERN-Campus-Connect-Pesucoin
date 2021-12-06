@@ -24,7 +24,7 @@
 .nav-list li:active{
   list-style: none;
   border-radius: 16px;
-  background-color: #3E065F;
+  background-color: #3B1350;
   margin: 16px 8px;
   padding: 16px 32px;
 }
@@ -77,6 +77,12 @@
     list-style: none;
     margin: 8px 0px;
     padding: 8px 0px;
+  }
+
+  .nav-list li:active{
+    list-style: none;
+    margin: 4px 0px;
+    padding: 12px 24px;
   }
 
   .nav-list-resp{

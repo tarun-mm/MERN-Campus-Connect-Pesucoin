@@ -4,6 +4,14 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './navBar.css'
 
 class NavBar extends React.Component {
+  dropNav = () => {
+    document.querySelector("nav").classList.toggle("nav-resp");
+    var li = document.querySelectorAll("li p");
+    for (var i = 0; i < li.length; i++) {
+      li[i].classList.toggle("nav-list-resp");
+    }
+  };
+
   render() { 
     return(
       <>
@@ -18,7 +26,7 @@ class NavBar extends React.Component {
           <Link to='/'><li><p className="nav-list-resp">Contact</p></li></Link>
         </ul>
 
-        <div className="burger" onClick={this.props.dropNav}>
+        <div className="burger" onClick={this.dropNav}>
           <div className="line"></div>
           <div className="line"></div>
           <div className="line"></div>
