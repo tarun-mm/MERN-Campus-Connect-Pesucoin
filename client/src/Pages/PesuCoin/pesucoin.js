@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../../Default/NavBar/navBar";
 import "./pesucoin.css";
+import "../../Default/CSS/theme.css"
 
 class PesuCoin extends React.Component {
   render() {

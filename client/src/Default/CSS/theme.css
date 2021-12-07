@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+.box-main{
+  width: 60%;
+  margin: auto;
+  padding-top: 5%;
+}
+
+.paraHeading{
+  color: #212121;
+  font-size: x-large;
+  font-family: Lato, Inter;
+  font-weight: 600;
+}
+
+.paraText{
+  color: #212121;
+  font-size: medium;
+  font-family: Lato, Inter;
+  font-weight: 400;
+}
+
+.card {
+  padding: 16px 24px;
+  background-color: #CBB36B;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  padding: 16px 24px;
+  background-color: #CBB36B;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.section{
+  background-color: #212121;
+  height: 100vh;
+}
+
+.navbar{
+  display: flex;
+  justify-content: center;
+  background-color: #282828;
+  top: 0;
+  position: sticky;
+}
+
+@media only screen and (max-width: 1200px){
+  .navbar{
+    height: 72px;
+    transition: height 1.5s;
+  }
+
+  .nav-resp{
+    height: 500px;
+    transition: height 1.5s;
+  }
+}
