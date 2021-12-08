@@ -19,6 +19,12 @@
   font-family: Lato, Inter;
   font-weight: 400;
 }
+.paraTextBold{
+  color: #212121;
+  font-size: medium;
+  font-family: Lato, Inter;
+  font-weight: 550;
+}
 
 .card {
   padding: 16px 24px;
@@ -46,6 +52,28 @@
   background-color: #282828;
   top: 0;
   position: sticky;
+}
+.button{
+  background-color: #282828;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+.button:hover{
+  background-color: #212121;
+}
+.input{
+  width: 100%; 
+  padding: 12px;  
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical
 }
 
 @media only screen and (max-width: 1200px){

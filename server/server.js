@@ -30,6 +30,29 @@ createServer(function (request, response) {
           });
       }
     );
+  } else if (request.method == "GET" && pathname == "/auth.json") {
+    console.log("Executing Mongo");
+    MongoClient.connect(
+      "mongodb://localhost:27017",
+      {
+        useUnifiedTopology: true,
+      },
+      function (err, client) {
+        console.log("Connected successfully to server");
+        const db = client.db("campus_connect");
+        db.collection("auth")
+          .find({})
+          .toArray(function (err, docs) {
+            response.writeHead(200, { 
+              "Content-Type": "application/json" ,
+              "Access-Control-Allow-Origin": "*"
+            });
+            response.write(JSON.stringify(docs));
+            client.close();
+            response.end();
+          });
+      }
+    );
   } else {
     let body = [];
     request
