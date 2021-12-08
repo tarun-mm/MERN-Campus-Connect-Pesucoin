@@ -6,7 +6,7 @@ import axios from "axios";
 var options =
 {
 host: 'localhost',
-port: '8081',
+port: '5000',
 path : '/pes.html',
 };
 //callback function is used to deal with the response
@@ -22,7 +22,7 @@ var callback = function(response)
 var req = http.request(options,callback);
 req.end(); */
 
-// fetch("http://localhost:8081/spaces.json", {
+// fetch("http://localhost:5000/spaces.json", {
 //   method: "GET",
 //   headers: { "Content-Type": "application/json" },
 // })
@@ -30,7 +30,11 @@ req.end(); */
 //   .then((res) => console.log(res));
 
 axios({
-  url: "http://localhost:8081/spaces.json",
+  url: "http://localhost:5000/auth.json",
+  data: JSON.stringify({
+    username: "PES1UG20CS001",
+    password: "PES1UG20CS001",
+  }),
   method: "GET",
   headers: { "Content-Type": "application/json" },
 })
@@ -38,14 +42,17 @@ axios({
   .catch((err) => console.log(err));
 
 
-// fetch("http://localhost:8081/spaces.json", {
+// POST
+
+
+// fetch("http://localhost:5000/spaces.json", {
 //   method: "POST",
 //   body: JSON.stringify({ name: "Aruna modified", col: "MIT" }),
 //   headers: { "Content-Type": "application/json" },
 // }).then((res) => console.log(res));
 
 // axios({
-//   url: "http://localhost:8081/spaces.json",
+//   url: "http://localhost:5000/spaces.json",
 //   method: "POST",
 //   headers: { "Content-Type": "application/json" },
 //   data: JSON.stringify({ name: "Aruna modified", col: "MIT" }),
