@@ -13,7 +13,7 @@ class Spaces extends React.Component {
 
   componentDidMount = () =>{
     axios({
-      url: "http://localhost:8081/spaces.json",
+      url: "http://localhost:5000/spaces.json",
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })

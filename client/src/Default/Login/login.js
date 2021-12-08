@@ -1,23 +1,29 @@
 import React from "react";
-import axios from "axios"
+import axios from "axios";
 
 class Login extends React.Component {
   handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     var { uname, pass } = document.forms[0];
-    console.log(uname.value, pass.value)
+    console.log(uname.value, pass.value);
+
     axios({
-      url: "http://localhost:8081/auth.json",
+      url: "http://127.0.0.1:5000/auth.json",
+      mode: 'no-cors',
+      data: JSON.stringify({
+        username: "PES1UG20CS001",
+        password: "PES1UG20CS001",
+      }),
       method: "GET",
-      params: {
-        username: uname.value
+      headers: { 
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        mode: "cors"
       },
-      headers: { "Content-Type": "application/json" },
     })
-      .then((res) => {
-        console.log(res.data)
-      }).catch((err) => console.log(err));
-  };
+      .then((res) => console.log(res.data))
+      .catch((err) => console.log(err));
+  }
 
   render() {
     return (
