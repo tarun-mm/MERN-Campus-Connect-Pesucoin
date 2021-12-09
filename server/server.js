@@ -35,6 +35,13 @@ const spaceSchema = new mongoose.Schema({
 });
 const Space = new mongoose.model("spaces_data", spaceSchema);
 
+// PesuCoin
+const pesuCoinSchema = new mongoose.Schema({
+  email: String,
+  coins: Number
+})
+const PesuCoin = new mongoose.model("pesucoin", pesuCoinSchema);
+
 // Contact
 const contactSchema = new mongoose.Schema({
   name: String,
@@ -63,6 +70,7 @@ app.post("/login", (req, res) => {
 
 app.post("/register", (req, res) => {
   const { name, email, password } = req.body;
+  var coins = 0
   User.findOne({ email: email }, (err, user) => {
     if (user) {
       res.send({ message: "User already registerd" });
@@ -70,13 +78,21 @@ app.post("/register", (req, res) => {
       const user = new User({
         name,
         email,
-        password,
+        password
       });
       user.save((err) => {
-        if (err) {
-          res.send(err);
-        } else {
-          res.send({ message: "Successfully Registered, Please login now." });
+        if (err) res.send(err);
+        else {
+          const pesuCoin = new PesuCoin({
+            email,
+            coins
+          })
+          pesuCoin.save((err) =>{
+            if(err) res.send(err)
+            else {
+              res.send({ message: "Successfully Registered, Please login now." });
+            }
+          })
         }
       });
     }
@@ -90,6 +106,16 @@ app.post("/spaces", (req, res) => {
     else res.send({ spaces: docs });
   });
 });
+
+app.post("/pesucoin", (req, res) => {
+  const { email } = req.body;
+  PesuCoin.findOne({ email: email }, (err, user) => {
+    // console.log(user)
+    // console.log(typeof(user))
+    if (user) res.send({ message: "PesuCoin connected", coins: user["coins"] })
+    else res.send({ message: "User not existing" })
+  })
+})
 
 app.post("/contact", (req, res) => {
   const { name, sem, email, query } = req.body;

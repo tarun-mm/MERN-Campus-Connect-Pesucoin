@@ -58,9 +58,8 @@ req.end(); */
 //   .then((res) => console.log(res))
 //   .catch((err) => console.log(err));
 
-axios.post("http://localhost:5000/mouse", {
-      name: "asf"
+axios.post("http://localhost:5000/pesucoin", {
+      email: "tarun@gmail.com"
     }).then((res) => {
-      alert(res.data.message);
-      //document.getElementById("contactForm").reset()
+      console.log(res.data.coins)
     });
