@@ -79,7 +79,7 @@ class Login extends React.Component {
                     />
                   </div>
                   <div className="button-container">
-                    <input className="button" type="submit" value="Login" />
+                    <input className="button paraText" type="submit" value="Login" />
                   </div>
                 </form>
               </div>

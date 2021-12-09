@@ -1,6 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import Contact from "./Pages/Contact/contact";
+import Food from "./Pages/Food/food";
 import Home from "./Pages/Home/home";
 import Login from "./Default/Login/login";
 import PesuCoin from "./Pages/PesuCoin/pesucoin";
@@ -40,6 +41,7 @@ class App extends React.Component {
       <Router>
         <Routes>
           <Route exact path="/" element={this.state.loggedIn ? <Home/> : <Login userLoggedIn={this.userLoggedIn} />}></Route>
+          <Route exact path="/food" element={this.state.loggedIn ? <Food /> : <Login userLoggedIn={this.userLoggedIn} />}></Route>
           <Route exact path="/spaces" element={this.state.loggedIn ? <Spaces /> : <Login userLoggedIn={this.userLoggedIn} />}></Route>
           <Route exact path="/pesucoin" element={this.state.loggedIn ? <PesuCoin userName={this.state.name} userEmail={this.state.email} /> : <Login userLoggedIn={this.userLoggedIn} />}></Route>
           <Route exact path="/contact" element={this.state.loggedIn ? <Contact /> : <Login userLoggedIn={this.userLoggedIn} />}></Route>
