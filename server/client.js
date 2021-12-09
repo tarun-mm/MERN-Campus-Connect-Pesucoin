@@ -1,6 +1,6 @@
-import http from "http";
-import fetch from "node-fetch";
 import axios from "axios";
+import fetch from "node-fetch";
+import http from "http";
 
 /*
 var options =
@@ -58,9 +58,9 @@ req.end(); */
 //   .then((res) => console.log(res))
 //   .catch((err) => console.log(err));
 
-axios.post("http://localhost:5000/spaces").then((res) => {
-  console.log(res.data.spaces.length);
-  console.log(typeof(res.data.spaces))
-  // console.log(res.data.user);
-  // history.push("/");
-});
+axios.post("http://localhost:5000/mouse", {
+      name: "asf"
+    }).then((res) => {
+      alert(res.data.message);
+      //document.getElementById("contactForm").reset()
+    });

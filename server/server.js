@@ -1,5 +1,5 @@
-import express from "express";
 import cors from "cors";
+import express from "express";
 import mongoose from "mongoose";
 
 const app = express();
@@ -22,7 +22,7 @@ mongoose.connect(
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
-  password: String
+  password: String,
 });
 const User = new mongoose.model("User", userSchema);
 
@@ -31,19 +31,20 @@ const spaceSchema = new mongoose.Schema({
   space_name: String,
   venue: String,
   date: String,
-  time: String
+  time: String,
 });
 const Space = new mongoose.model("spaces_data", spaceSchema);
 
+// Contact
+const contactSchema = new mongoose.Schema({
+  name: String,
+  sem: String,
+  email: String,
+  query: String
+});
+const Contact = new mongoose.model("contact", contactSchema);
 
 // Routes
-app.post("/spaces", (req, res) => {
-  Space.find({}, (err, docs) => {
-    // console.log(docs)
-    if (err) console.log(err)
-    else res.send({ spaces : docs });
-  });
-});
 
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
@@ -78,6 +79,32 @@ app.post("/register", (req, res) => {
           res.send({ message: "Successfully Registered, Please login now." });
         }
       });
+    }
+  });
+});
+
+app.post("/spaces", (req, res) => {
+  Space.find({}, (err, docs) => {
+    // console.log(docs)
+    if (err) console.log(err);
+    else res.send({ spaces: docs });
+  });
+});
+
+app.post("/contact", (req, res) => {
+  const { name, sem, email, query } = req.body;
+
+  const contact = new Contact({
+    name,
+    sem,
+    email,
+    query
+  });
+  contact.save((err) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send({ message: "Your Query has been submitted" });
     }
   });
 });

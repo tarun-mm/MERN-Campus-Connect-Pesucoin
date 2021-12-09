@@ -1,7 +1,8 @@
-import React from "react";
-import NavBar from "../../Default/NavBar/navBar";
-import axios from "axios"
 import "../../Default/CSS/theme.css"
+
+import NavBar from "../../Default/NavBar/navBar";
+import React from "react";
+import axios from "axios"
 
 class Spaces extends React.Component {
   constructor(){
@@ -36,9 +37,9 @@ class Spaces extends React.Component {
                 return ( <>
                   <div className="card" key={item["_id"]} style={{width: "27%", marginLeft: marLeft, marginBottom: "1%"}}>
                     <span className="paraHeading">{item["space_name"]}</span><br/>
-                    <span className="paraTextBold">Venue:</span>  <span className="paraText">{item["venue"]}</span><br/>
-                    <span className="paraTextBold">Date:</span><span className="paraText">{item["date"]}</span><br/>
-                    <span className="paraTextBold">Time:</span><span className="paraText">{item["time"]}</span>
+                    <span className="paraTextBold">Venue:</span>&nbsp;&emsp;<span className="paraText">{item["venue"]}</span><br/>
+                    <span className="paraTextBold">Date:</span>&emsp;&emsp;<span className="paraText">{item["date"]}</span><br/>
+                    <span className="paraTextBold">Time:</span>&emsp;&emsp;<span className="paraText">{item["time"]}</span>
                   </div>
                   <div style={{ height: "16px" }}></div>
                   </>
