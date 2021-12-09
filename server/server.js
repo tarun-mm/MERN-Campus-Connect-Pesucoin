@@ -38,16 +38,25 @@ const Space = new mongoose.model("spaces_data", spaceSchema);
 // PesuCoin
 const pesuCoinSchema = new mongoose.Schema({
   email: String,
-  coins: Number
-})
-const PesuCoin = new mongoose.model("pesucoin", pesuCoinSchema);
+  coins: Number,
+  numOrders: Number,
+});
+const PesuCoin = new mongoose.model("coin", pesuCoinSchema);
+
+// Transactions
+const transactionSchema = new mongoose.Schema({
+  email: String,
+  coins: Number,
+  orderNo: Number,
+});
+const Transaction = new mongoose.model("transaction", transactionSchema);
 
 // Contact
 const contactSchema = new mongoose.Schema({
   name: String,
   sem: String,
   email: String,
-  query: String
+  query: String,
 });
 const Contact = new mongoose.model("contact", contactSchema);
 
@@ -70,7 +79,8 @@ app.post("/login", (req, res) => {
 
 app.post("/register", (req, res) => {
   const { name, email, password } = req.body;
-  var coins = 0
+  var coins = 0,
+    numOrders = 0;
   User.findOne({ email: email }, (err, user) => {
     if (user) {
       res.send({ message: "User already registerd" });
@@ -78,21 +88,24 @@ app.post("/register", (req, res) => {
       const user = new User({
         name,
         email,
-        password
+        password,
       });
       user.save((err) => {
         if (err) res.send(err);
         else {
           const pesuCoin = new PesuCoin({
             email,
-            coins
-          })
-          pesuCoin.save((err) =>{
-            if(err) res.send(err)
+            coins,
+            numOrders,
+          });
+          pesuCoin.save((err) => {
+            if (err) res.send(err);
             else {
-              res.send({ message: "Successfully Registered, Please login now." });
+              res.send({
+                message: "Successfully Registered, Please login now",
+              });
             }
-          })
+          });
         }
       });
     }
@@ -111,10 +124,39 @@ app.post("/pesucoin", (req, res) => {
   const { email } = req.body;
   PesuCoin.findOne({ email: email }, (err, user) => {
     // console.log(user)
-    if (user) res.send({ message: "PesuCoin connected", coins: user["coins"] })
-    else res.send({ message: "User not existing" })
-  })
-})
+    if (user)
+      res.send({
+        message: "PesuCoin connected",
+        coins: user["coins"],
+        numOrders: user["numOrders"],
+      });
+    else res.send({ message: "User not existing" });
+  });
+});
+
+app.post("/transactions/insert", (req, res) => {
+  const { email, coinsTot, coinsSpent, orderNo } = req.body;
+  var coins = coinsSpent
+  const transaction = new Transaction({
+    email,
+    coins,
+    orderNo,
+  });
+  transaction.save((err) => {
+    if (err) res.send(err);
+    else {
+      var incVal = 1;
+      PesuCoin.updateOne(
+        { email: email },
+        { $set: { coins: coinsTot - coinsSpent }, $inc: { numOrders: incVal } },
+        (err, docs) => {
+          if(err) res.send(err)
+          else res.send({ message: "Successfully booked" });
+        }
+      );
+    }
+  });
+});
 
 app.post("/contact", (req, res) => {
   const { name, sem, email, query } = req.body;
@@ -123,7 +165,7 @@ app.post("/contact", (req, res) => {
     name,
     sem,
     email,
-    query
+    query,
   });
   contact.save((err) => {
     if (err) {

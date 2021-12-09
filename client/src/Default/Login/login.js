@@ -59,7 +59,7 @@ class Login extends React.Component {
               <div className="form">
                 <h1 className="paraHeading">Login</h1>
                 <br />
-                <form id="loginForm" onSubmit={this.handleLogin}>
+                <form id="loginForm" onSubmit={ this.handleLogin }>
                   <div className="input-container">
                     <label className="paraTextBold">Email </label>
                     <input

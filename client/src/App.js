@@ -41,7 +41,7 @@ class App extends React.Component {
       <Router>
         <Routes>
           <Route exact path="/" element={this.state.loggedIn ? <Home/> : <Login userLoggedIn={this.userLoggedIn} />}></Route>
-          <Route exact path="/food" element={this.state.loggedIn ? <Food /> : <Login userLoggedIn={this.userLoggedIn} />}></Route>
+          <Route exact path="/food" element={this.state.loggedIn ? <Food userEmail={this.state.email} /> : <Login userLoggedIn={this.userLoggedIn} />}></Route>
           <Route exact path="/spaces" element={this.state.loggedIn ? <Spaces /> : <Login userLoggedIn={this.userLoggedIn} />}></Route>
           <Route exact path="/pesucoin" element={this.state.loggedIn ? <PesuCoin userName={this.state.name} userEmail={this.state.email} /> : <Login userLoggedIn={this.userLoggedIn} />}></Route>
           <Route exact path="/contact" element={this.state.loggedIn ? <Contact /> : <Login userLoggedIn={this.userLoggedIn} />}></Route>
