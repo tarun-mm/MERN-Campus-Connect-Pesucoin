@@ -1,36 +1,43 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PesuCoin from "./Pages/PesuCoin/pesucoin";
-import Spaces from "./Pages/Spaces/spaces"
+import Spaces from "./Pages/Spaces/spaces";
 import Home from "./Pages/Home/home";
 import Contact from "./Pages/Contact/contact";
-import Login from "./Default/Login/login"
+import Login from "./Default/Login/login";
 
 class App extends React.Component {
-  constructor(){
-    super()
+  constructor() {
+    super();
     this.state = {
       loggedIn: false,
-      username: ""
-    }
+      email: "",
+    };
   }
 
-  userLoggedIn = (username) => {
-    this.setState({
-      loggedIn: true,
-      username: username
-    })
-  }
+  userLoggedIn = (email) => {
+    console.log(email)
+    if (email === "") {
+      this.setState({
+        loggedIn: false,
+        email: email,
+      });
+    } else {
+      this.setState({
+        loggedIn: true,
+        email: email,
+      });
+    }
+  };
 
   render() {
     return (
       <Router>
         <Routes>
-          <Route exact path="/" element={<Login userLoggedIn={this.userLoggedIn} />}></Route>
-          <Route exact path="/home" element={<Home />}></Route>
+          <Route exact path="/" element={this.state.loggedIn ? <Home/> : <Login userLoggedIn={this.userLoggedIn} />}></Route>
           <Route exact path="/spaces" element={<Spaces />}></Route>
           <Route exact path="/pesucoin" element={<PesuCoin />}></Route>
-          <Route exact path="/contact" element={<Contact/>}></Route>
+          <Route exact path="/contact" element={<Contact />}></Route>
         </Routes>
       </Router>
     );

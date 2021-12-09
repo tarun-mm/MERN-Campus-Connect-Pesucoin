@@ -17,10 +17,10 @@ class NavBar extends React.Component {
       <>
         <ul className="nav-list">
           <div className="logo"><img src={ logo } alt="logo"/></div>
-          <Link to='/home'><li><p className="nav-list-resp">Home</p></li></Link>
-          <Link to='/home'><li><p className="nav-list-resp">Clubs</p></li></Link>
-          <Link to='/home'><li><p className="nav-list-resp">Food</p></li></Link>
-          <Link to='/home'><li><p className="nav-list-resp">Issues</p></li></Link>
+          <Link to='/'><li><p className="nav-list-resp">Home</p></li></Link>
+          <Link to='/'><li><p className="nav-list-resp">Clubs</p></li></Link>
+          <Link to='/'><li><p className="nav-list-resp">Food</p></li></Link>
+          <Link to='/'><li><p className="nav-list-resp">Issues</p></li></Link>
           <Link to='/spaces'><li><p className="nav-list-resp">Spaces</p></li></Link>
           <Link to='/pesucoin'><li><p className="nav-list-resp">PesuCoin</p></li></Link>
           <Link to='/contact'><li><p className="nav-list-resp">Contact</p></li></Link>

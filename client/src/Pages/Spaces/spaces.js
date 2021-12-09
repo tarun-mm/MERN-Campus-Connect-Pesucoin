@@ -12,14 +12,10 @@ class Spaces extends React.Component {
   }
 
   componentDidMount = () =>{
-    axios({
-      url: "http://localhost:5000/spaces.json",
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    })
+    axios.post("http://localhost:5000/spaces")
       .then((res) => {
         this.setState({
-          space_elems: res.data,
+          space_elems: res.data.spaces,
         })
       })
   }
@@ -36,7 +32,6 @@ class Spaces extends React.Component {
               this.state.space_elems &&
               this.state.space_elems.map((item, index) => {
                 var marLeft = "1%"
-                console.log(index)
                 return ( <>
                   <div className="card" key={item["_id"]} style={{width: "27%", marginLeft: marLeft, marginBottom: "1%"}}>
                     <div className="paraHeading">{item["space_name"]}</div>

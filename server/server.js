@@ -1,106 +1,87 @@
-import { parse } from "url";
-import { createServer } from "http";
-import { MongoClient } from "mongodb";
+import express from "express";
+import cors from "cors";
+import mongoose from "mongoose";
 
-createServer(function (request, response) {
-  var pathname = parse(request.url).pathname;
-  console.log("Request for " + pathname + " received");
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(cors());
 
-  if (request.method == "GET" && pathname == "/spaces.json") {
-    console.log("Executing Mongo");
-    MongoClient.connect(
-      "mongodb://localhost:27017",
-      {
-        useUnifiedTopology: true,
-      },
-      function (err, client) {
-        console.log("Connected successfully to server");
-        const db = client.db("campus_connect");
-        db.collection("spaces_data")
-          .find({})
-          .toArray(function (err, docs) {
-            response.writeHead(200, {
-              "Content-Type": "application/json",
-              "Access-Control-Allow-Origin": "*",
-            });
-
-            response.write(JSON.stringify(docs));
-            client.close();
-            response.end();
-          });
-      }
-    );
-  } else if (request.method == "GET" && pathname == "/auth.json") {
-    let body = [];
-    request
-      .on("data", (chunk) => {
-        body.push(chunk);
-      })
-      .on("end", () => {
-        body = Buffer.concat(body).toString();
-        body = JSON.parse(body)
-
-        console.log(body)
-
-        body = {
-          "username": "PES1UG20CS001",
-          "password": "PES1UG20CS002"
-        }
-
-        console.log("Executing Mongo");
-        MongoClient.connect(
-          "mongodb://localhost:27017",
-          {
-            useUnifiedTopology: true,
-          },
-          function (err, client) {
-            console.log("Connected successfully to server");
-            const db = client.db("campus_connect");
-            db.collection("auth")
-              .find({ 
-                username: body["username"],
-                password: body["password"]
-              })
-              .toArray(function (err, docs) {
-                response.writeHead(200, {
-                  "Content-Type": "application/json",
-                  "Access-Control-Allow-Origin": "*",
-                });
-                response.write(docs.length == 0 ? "0" : "1");
-                client.close();
-                response.end();
-              });
-          }
-        );
-      });
-  } else {
-    let body = [];
-    request
-      .on("data", (chunk) => {
-        body.push(chunk);
-      })
-      .on("end", () => {
-        body = Buffer.concat(body).toString();
-      });
-    console.log("executing mongo");
-    MongoClient.connect(
-      "mongodb://localhost:27017",
-      {
-        useUnifiedTopology: true,
-      },
-      function (err, client) {
-        console.log("Connected successfully to server");
-        const db = client.db("test");
-        db.collection("student")
-          .insertOne(JSON.parse(body))
-          .then((r) => {
-            response.writeHead(200, { "Content-Type": "application/json" });
-
-            client.close();
-            response.end();
-          });
-      }
-    );
+mongoose.connect(
+  "mongodb://localhost:27017/campus_connect",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  () => {
+    console.log("DB connected");
   }
-}).listen(5000);
-console.log("server running at the link http://localhost/5000");
+);
+
+// User
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  password: String
+});
+const User = new mongoose.model("User", userSchema);
+
+// Spaces
+const spaceSchema = new mongoose.Schema({
+  space_name: String,
+  venue: String,
+  date: String,
+  time: String
+});
+const Space = new mongoose.model("spaces_data", spaceSchema);
+
+
+// Routes
+app.post("/spaces", (req, res) => {
+  Space.find({}, (err, docs) => {
+    // console.log(docs)
+    if (err) console.log(err)
+    else res.send({ spaces : docs });
+  });
+});
+
+app.post("/login", (req, res) => {
+  const { email, password } = req.body;
+  User.findOne({ email: email }, (err, user) => {
+    if (user) {
+      if (password === user.password) {
+        res.send({ message: "Login Successfull", user: user });
+      } else {
+        res.send({ message: "Password didn't match" });
+      }
+    } else {
+      res.send({ message: "User not registered" });
+    }
+  });
+});
+
+app.post("/register", (req, res) => {
+  const { name, email, password } = req.body;
+  User.findOne({ email: email }, (err, user) => {
+    if (user) {
+      res.send({ message: "User already registerd" });
+    } else {
+      const user = new User({
+        name,
+        email,
+        password,
+      });
+      user.save((err) => {
+        if (err) {
+          res.send(err);
+        } else {
+          res.send({ message: "Successfully Registered, Please login now." });
+        }
+      });
+    }
+  });
+});
+
+app.listen(5000, () => {
+  console.log("BE started at port 5000");
+});
