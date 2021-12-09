@@ -2,10 +2,10 @@ import React from "react";
 import axios from "axios";
 
 class Login extends React.Component {
-  handleSubmit = (event) => {
+  handleLogin = (event) => {
     event.preventDefault();
     var { email, pass } = document.forms[0];
-    console.log(email.value, pass.value);
+    // console.log(email.value, pass.value);
 
     axios
       .post("http://localhost:5000/login", {
@@ -13,29 +13,78 @@ class Login extends React.Component {
         password: pass.value,
       })
       .then((res) => {
-        console.log(res.data.message);
-        console.log(res.data.user);
-        this.props.userLoggedIn(res.data.user.email)
+        // console.log(res.data.message);
+        // console.log(res.data.user);
+        if(res.data.message == "Login Successful") {
+          this.props.userLoggedIn(res.data.user.email);
+        } else {
+          alert(res.data.message)
+        }
       });
+  };
+
+  handleRegister = (event) => {
+    event.preventDefault();
+    var { name, email, password, reEnterPassword } = document.forms[1];
+    // console.log(name.value, email.value, password.value, reEnterPassword.value)
+
+    if (name.value && email.value && password.value && password.value === reEnterPassword.value) {
+      axios.post("http://localhost:5000/register", {
+        name: name.value,
+        email: email.value,
+        password: password.value,
+        reEnterPassword: reEnterPassword.value
+      }).then((res) => {
+        alert(res.data.message);
+        document.getElementById("registerForm").reset()
+      });
+    } else {
+      alert("Invlid input");
+    }
   };
 
   render() {
     return (
-      <div className="form">
-        <form onSubmit={this.handleSubmit}>
-          <div className="input-container">
-            <label>Email </label>
-            <input type="email" name="email" required />
-          </div>
-          <div className="input-container">
-            <label>Password </label>
-            <input type="password" name="pass" required />
-          </div>
-          <div className="button-container">
-            <input type="submit" />
-          </div>
-        </form>
-      </div>
+      <>
+        <div className="form">
+          <form id="loginForm" onSubmit={this.handleLogin}>
+            <div className="input-container">
+              <label>Email </label>
+              <input type="email" name="email" required />
+            </div>
+            <div className="input-container">
+              <label>Password </label>
+              <input type="password" name="pass" required />
+            </div>
+            <div className="button-container">
+              <input type="submit" value="Login" />
+            </div>
+          </form>
+        </div>
+        <div className="form">
+          <form id="registerForm" onSubmit={this.handleRegister}>
+            <div className="input-container">
+              <label>Your Name </label>
+              <input type="text" name="name" required />
+            </div>
+            <div className="input-container">
+              <label>Email </label>
+              <input type="email" name="email" required />
+            </div>
+            <div className="input-container">
+              <label>Password </label>
+              <input type="password" name="password" required />
+            </div>
+            <div className="input-container">
+              <label>Re-Enter Password </label>
+              <input type="password" name="reEnterPassword" required />
+            </div>
+            <div className="button-container">
+              <input type="submit" value="Register" />
+            </div>
+          </form>
+        </div>
+      </>
     );
   }
 }

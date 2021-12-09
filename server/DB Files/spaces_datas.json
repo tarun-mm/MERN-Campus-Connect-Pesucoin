@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "61b19757aef5bec4dff8f8a3"
+  },
+  "space_name": "Marvel",
+  "venue": "13th floor",
+  "date": "29th December",
+  "time": "1 to 3"
+},{
+  "_id": {
+    "$oid": "61b1978caef5bec4dff8f8a4"
+  },
+  "space_name": "Marvel",
+  "venue": "13th floor",
+  "date": "29th December",
+  "time": "1 to 3"
+},{
+  "_id": {
+    "$oid": "61b1978daef5bec4dff8f8a5"
+  },
+  "space_name": "Marvel",
+  "venue": "13th floor",
+  "date": "29th December",
+  "time": "1 to 3"
+},{
+  "_id": {
+    "$oid": "61b1978faef5bec4dff8f8a6"
+  },
+  "space_name": "Marvel",
+  "venue": "13th floor",
+  "date": "29th December",
+  "time": "1 to 3"
+},{
+  "_id": {
+    "$oid": "61b19791aef5bec4dff8f8a7"
+  },
+  "space_name": "Marvel",
+  "venue": "13th floor",
+  "date": "29th December",
+  "time": "1 to 3"
+},{
+  "_id": {
+    "$oid": "61b19793aef5bec4dff8f8a8"
+  },
+  "space_name": "Marvel",
+  "venue": "13th floor",
+  "date": "29th December",
+  "time": "1 to 3"
+}]
