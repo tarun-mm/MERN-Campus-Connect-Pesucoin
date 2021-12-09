@@ -58,8 +58,8 @@ req.end(); */
 //   .then((res) => console.log(res))
 //   .catch((err) => console.log(err));
 
-axios.post("http://localhost:5000/pesucoin", {
+axios.post("http://localhost:5000/transactions/get", {
       email: "tarun@gmail.com"
     }).then((res) => {
-      console.log(res.data.coins)
+      console.log(res.data.transactions)
     });

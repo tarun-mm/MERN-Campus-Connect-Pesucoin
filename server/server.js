@@ -158,6 +158,16 @@ app.post("/transactions/insert", (req, res) => {
   });
 });
 
+app.post("/transactions/get", (req, res) => {
+  const { email } = req.body
+  
+  Transaction.find({ email: email }, (err, docs) => {
+    // console.log(docs)
+    if (err) console.log(err);
+    else res.send({ transactions: docs });
+  });
+})
+
 app.post("/contact", (req, res) => {
   const { name, sem, email, query } = req.body;
 

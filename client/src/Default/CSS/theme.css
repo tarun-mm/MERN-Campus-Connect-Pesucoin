@@ -56,7 +56,8 @@
 
 .sectionregister{
   background-color: #212121;
-  height: 250vh;
+  height: max-content;
+  padding-bottom: 128px;
 }
 
 .navbar{

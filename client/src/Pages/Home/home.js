@@ -1,7 +1,7 @@
-import React from "react";
-import "./home.css";
 import "../../Default/CSS/theme.css"
+
 import NavBar from "../../Default/NavBar/navBar";
+import React from "react";
 
 class Home extends React.Component {
   render() {
