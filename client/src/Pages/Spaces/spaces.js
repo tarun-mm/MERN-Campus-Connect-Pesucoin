@@ -32,12 +32,13 @@ class Spaces extends React.Component {
               this.state.space_elems &&
               this.state.space_elems.map((item, index) => {
                 var marLeft = "1%"
+                console.log(index)
                 return ( <>
                   <div className="card" key={item["_id"]} style={{width: "27%", marginLeft: marLeft, marginBottom: "1%"}}>
-                    <div className="paraHeading">{item["space_name"]}</div>
-                    <div className="paraText">{item["venue"]}</div>
-                    <div className="paraText">{item["date"]}</div>
-                    <div className="paraText">{item["time"]}</div>
+                    <span className="paraHeading">{item["space_name"]}</span><br/>
+                    <span className="paraTextBold">Venue:</span>  <span className="paraText">{item["venue"]}</span><br/>
+                    <span className="paraTextBold">Date:</span><span className="paraText">{item["date"]}</span><br/>
+                    <span className="paraTextBold">Time:</span><span className="paraText">{item["time"]}</span>
                   </div>
                   <div style={{ height: "16px" }}></div>
                   </>

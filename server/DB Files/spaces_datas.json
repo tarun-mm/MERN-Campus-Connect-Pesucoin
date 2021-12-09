@@ -1,49 +1,49 @@
 [{
   "_id": {
-    "$oid": "61b19757aef5bec4dff8f8a3"
+    "$oid": "61af5dc9268917ec1de23261"
   },
   "space_name": "Marvel",
   "venue": "13th floor",
-  "date": "29th December",
-  "time": "1 to 3"
+  "date": "29th October",
+  "time": "3 to 4"
 },{
   "_id": {
-    "$oid": "61b1978caef5bec4dff8f8a4"
+    "$oid": "61af7436268917ec1de23267"
   },
-  "space_name": "Marvel",
+  "space_name": "DC",
   "venue": "13th floor",
-  "date": "29th December",
-  "time": "1 to 3"
+  "date": "4th October",
+  "time": "3 to 4"
 },{
   "_id": {
-    "$oid": "61b1978daef5bec4dff8f8a5"
+    "$oid": "61af7438268917ec1de23268"
   },
-  "space_name": "Marvel",
+  "space_name": "Cricket",
   "venue": "13th floor",
-  "date": "29th December",
-  "time": "1 to 3"
+  "date": "7th October",
+  "time": "3 to 4"
 },{
   "_id": {
-    "$oid": "61b1978faef5bec4dff8f8a6"
+    "$oid": "61af743a268917ec1de23269"
   },
-  "space_name": "Marvel",
+  "space_name": "F1",
   "venue": "13th floor",
-  "date": "29th December",
-  "time": "1 to 3"
+  "date": "14th October",
+  "time": "3 to 4"
 },{
   "_id": {
-    "$oid": "61b19791aef5bec4dff8f8a7"
+    "$oid": "61af743b268917ec1de2326a"
   },
-  "space_name": "Marvel",
+  "space_name": "Valorant",
   "venue": "13th floor",
-  "date": "29th December",
-  "time": "1 to 3"
+  "date": "6th October",
+  "time": "3 to 4"
 },{
   "_id": {
-    "$oid": "61b19793aef5bec4dff8f8a8"
+    "$oid": "61af743d268917ec1de2326b"
   },
-  "space_name": "Marvel",
+  "space_name": "CodeChef",
   "venue": "13th floor",
-  "date": "29th December",
-  "time": "1 to 3"
+  "date": "18th October",
+  "time": "3 to 4"
 }]

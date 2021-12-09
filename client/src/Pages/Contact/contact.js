@@ -13,7 +13,7 @@ class Contact extends React.Component{
     <div className="box-main">
     <div className="card">
   
-    <h1 className="paraHeading">Contact Us:-</h1>
+    <h1 className="paraHeading">Contact Us:</h1>
     <br/>
     <h2 className="paraText">Contact Number:-979786675656</h2>
     <h2 className="paraText">Email Address:-gg@gmail.com</h2>
