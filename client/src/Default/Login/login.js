@@ -46,44 +46,56 @@ class Login extends React.Component {
   render() {
     return (
       <>
+        <section id="section" className="sectionregister">
+        <div className="box-main">
+        <div className="card">
         <div className="form">
+          <h1 className="paraHeading">Register</h1><br/>
           <form id="loginForm" onSubmit={this.handleLogin}>
             <div className="input-container">
-              <label>Email </label>
-              <input type="email" name="email" required />
+              <label className="paraText">Email </label>
+              <input className="input" type="email" name="email" required />
             </div>
             <div className="input-container">
-              <label>Password </label>
-              <input type="password" name="pass" required />
+              <label className="paraText">Password </label>
+              <input className="input" type="password" name="pass" required />
             </div>
             <div className="button-container">
-              <input type="submit" value="Login" />
+              <input className="button" type="submit" value="Login" />
             </div>
           </form>
         </div>
+        </div>
+        </div>
+        <div className="box-main">
+        <div className="card">
         <div className="form">
+        <h1 className="paraHeading">Login</h1><br/>
           <form id="registerForm" onSubmit={this.handleRegister}>
             <div className="input-container">
-              <label>Your Name </label>
-              <input type="text" name="name" required />
+              <label className="paraText">Your Name </label>
+              <input className="input" type="text" name="name" required />
             </div>
             <div className="input-container">
-              <label>Email </label>
-              <input type="email" name="email" required />
+              <label className="paraText">Email </label>
+              <input className="input" type="email" name="email" required />
             </div>
             <div className="input-container">
-              <label>Password </label>
-              <input type="password" name="password" required />
+              <label className="paraText">Password </label>
+              <input className="input" type="password" name="password" required />
             </div>
             <div className="input-container">
-              <label>Re-Enter Password </label>
-              <input type="password" name="reEnterPassword" required />
+              <label className="paraText">Re-Enter Password </label>
+              <input className="input" type="password" name="reEnterPassword" required />
             </div>
             <div className="button-container">
-              <input type="submit" value="Register" />
+              <input className="button" type="submit" value="Register" />
             </div>
           </form>
         </div>
+        </div>
+        </div>
+        </section>
       </>
     );
   }

@@ -46,6 +46,11 @@
   height: 100vh;
 }
 
+.sectionregister{
+  background-color: #212121;
+  height: 180vh;
+}
+
 .navbar{
   display: flex;
   justify-content: center;
