@@ -12,6 +12,14 @@
   font-family: Lato, Inter;
   font-weight: 600;
 }
+.paraHeadingLight
+{ color:#CBB36B;
+  font-size: x-large;
+  font-family: Lato, Inter;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 20;
+}
 
 .paraText{
   color: #212121;
@@ -48,7 +56,7 @@
 
 .sectionregister{
   background-color: #212121;
-  height: 180vh;
+  height: 250vh;
 }
 
 .navbar{
@@ -67,7 +75,16 @@
   cursor: pointer;
 
 }
-.button:hover{
+.buttonLight{
+  background-color: #ccc;
+  color: #282828;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button :hover{
   background-color: #212121;
 }
 .input{

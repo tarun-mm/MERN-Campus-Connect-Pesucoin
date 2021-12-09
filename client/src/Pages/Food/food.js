@@ -10,100 +10,122 @@ class Food extends React.Component {
         <nav className="navbar">
           <NavBar />
         </nav>
-        <h1 style={{ color: "#FFFFFF", textAlign: "center" }}>
+        
+        <section id="section" className="sectionregister">
+        <br/>
+        <br/>
+        <h1 className="paraHeadingLight">
           Book your meal now
         </h1>
-        <div style={{ margin: "60px" }}>
+        
+        <div style={{ margin: "40px" }}>
           <div className="box-main">
             <div className="card">
               <label className="paraTextBold">
-                Margherita
+                Margherita &nbsp; 
                 <input type="checkbox" defaultChecked="checked" />
+                <br/><span className="paraText">Amt:-35 pesucoins</span>
                 <span className="checkmark" />
               </label>
             </div>
             <div className="card">
               <label className="paraTextBold">
-                Formaggio
+                Formaggio &nbsp; 
                 <input type="checkbox" defaultChecked="checked" />
+                <br/><span className="paraText">Amt:27 pesucoins</span>
                 <span className="checkmark" />
               </label>
             </div>
             <div className="card">
               <label className="paraTextBold">
-                Chicken
+                Chicken &nbsp; 
                 <input type="checkbox" defaultChecked="checked" />
+                <br/><span className="paraText">Amt:- 25 pesucoins</span>
                 <span className="checkmark" />
               </label>
             </div>
           </div>
+
           <div className="box-main">
             <div className="card">
               <label className="paraTextBold">
-                Pineapple'o'clock
+                Pineapple'o'clock &nbsp; 
                 <input type="checkbox" defaultChecked="checked" />
+                <br/><span className="paraText">Amt:-30 pesucoins</span>
                 <span className="checkmark" />
               </label>
             </div>
             <div className="card">
               <label className="paraTextBold">
-                Meat Town Hot!
+                Meat Town Hot! &nbsp; 
                 <input type="checkbox" defaultChecked="checked" />
+                <br/><span className="paraText">Amt:-35 pesucoins</span>
                 <span className="checkmark" />
               </label>
             </div>
             <div className="card">
               <label className="paraTextBold">
-                Lasagna Popular
+                Lasagna Popular &nbsp; 
                 <input type="checkbox" defaultChecked="checked" />
+                <br/><span className="paraText">Amt:-40 pesucoins</span>
                 <span className="checkmark" />
               </label>
             </div>
           </div>
+
           <div className="box-main">
             <div className="card">
               <label className="paraTextBold">
-                Ravioli
+                Ravioli &nbsp; 
                 <input type="checkbox" defaultChecked="checked" />
+                <br/><span className="paraText">Amt:-55 pesucoins</span>
                 <span className="checkmark" />
               </label>
             </div>
             <div className="card">
               <label className="paraTextBold">
-                Spaghetti Classica
+                Spaghetti Classica &nbsp; 
                 <input type="checkbox" defaultChecked="checked" />
+                <br/><span className="paraText">Amt:-25 pesucoins</span>
                 <span className="checkmark" />
               </label>
             </div>
             <div className="card">
               <label className="paraTextBold">
-                Today's Soup Seasonal
+                Today's Soup Seasonal &nbsp; 
                 <input type="checkbox" defaultChecked="checked" />
+                <br/><span className="paraText">Amt:-35 pesucoins</span>
                 <span className="checkmark" />
               </label>
             </div>
           </div>
+
           <div className="box-main">
             <div className="card">
               <label className="paraTextBold">
-                Bruschetta
+                Bruschetta &nbsp; 
                 <input type="checkbox" defaultChecked="checked" />
+                <br/><span className="paraText">Amt:-55 pesucoins</span>
                 <span className="checkmark" />
               </label>
             </div>
             <div className="card">
               <label className="paraTextBold">
-                Garlic bread
+                Garlic bread &nbsp; 
                 <input type="checkbox" defaultChecked="checked" />
+                <br/><span className="paraText">Amt:-65 pesucoins</span>
                 <span className="checkmark" />
               </label>
             </div>
           </div>
         </div>
-        <a href="#" className="button" style={{ marginLeft: "700px" }}>
+
+        <a href="#" className="buttonLight" style={{ marginLeft: "500px" }}>
           Submit
         </a>
+      </section>
       </div>
+     
     );
   }
 }
