@@ -111,7 +111,6 @@ app.post("/pesucoin", (req, res) => {
   const { email } = req.body;
   PesuCoin.findOne({ email: email }, (err, user) => {
     // console.log(user)
-    // console.log(typeof(user))
     if (user) res.send({ message: "PesuCoin connected", coins: user["coins"] })
     else res.send({ message: "User not existing" })
   })
