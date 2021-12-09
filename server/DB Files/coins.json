@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "61b213cb376341226e418baf"
+  },
+  "email": "tarun@gmail.com",
+  "coins": 35,
+  "numOrders": 11,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61b22de48b527fda7a191918"
+  },
+  "email": "joseph@gmail.com",
+  "coins": 355,
+  "numOrders": 1,
+  "__v": 0
+}]

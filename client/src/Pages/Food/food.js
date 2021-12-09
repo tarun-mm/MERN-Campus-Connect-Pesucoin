@@ -41,7 +41,7 @@ class Food extends React.Component {
     return (
       <div>
         <nav className="navbar">
-          <NavBar />
+          <NavBar userLoggedIn={this.props.userLoggedIn} />
         </nav>
 
         <section id="section" className="sectionregister">

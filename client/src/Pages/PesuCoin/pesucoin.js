@@ -42,7 +42,7 @@ class PesuCoin extends React.Component {
     return (
       <>
         <nav className="navbar">
-          <NavBar />
+          <NavBar userLoggedIn={this.props.userLoggedIn} />
         </nav>
         <section id="section" className="sectionregister">
           <div className="box-main">

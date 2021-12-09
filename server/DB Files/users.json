@@ -1,17 +1,17 @@
 [{
   "_id": {
-    "$oid": "61b119eac3c404419c7e4722"
+    "$oid": "61b213ca376341226e418bad"
   },
-  "name": "tarun__m",
+  "name": "Tarun M",
   "email": "tarun@gmail.com",
   "password": "asdfasdf",
   "__v": 0
 },{
   "_id": {
-    "$oid": "61b1b10b2d753e5e48a83504"
+    "$oid": "61b22de48b527fda7a191916"
   },
   "name": "joseph",
   "email": "joseph@gmail.com",
-  "password": "qwerqwer",
+  "password": "asdfasdf",
   "__v": 0
 }]
