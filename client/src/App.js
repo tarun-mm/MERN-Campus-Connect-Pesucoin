@@ -1,31 +1,36 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import PesuCoin from "./Pages/PesuCoin/pesucoin";
-import Spaces from "./Pages/Spaces/spaces";
-import Home from "./Pages/Home/home";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+
 import Contact from "./Pages/Contact/contact";
+import Home from "./Pages/Home/home";
 import Login from "./Default/Login/login";
+import PesuCoin from "./Pages/PesuCoin/pesucoin";
+import React from "react";
+import Spaces from "./Pages/Spaces/spaces";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       loggedIn: false,
-      email: "",
+      name: "",
+      email: ""
     };
   }
 
-  userLoggedIn = (email) => {
+  userLoggedIn = (name, email) => {
+    console.log(name)
     console.log(email)
     if (email === "") {
       this.setState({
         loggedIn: false,
-        email: email,
+        name: name,
+        email: email
       });
     } else {
       this.setState({
         loggedIn: true,
-        email: email,
+        name: name,
+        email: email
       });
     }
   };
@@ -36,7 +41,7 @@ class App extends React.Component {
         <Routes>
           <Route exact path="/" element={this.state.loggedIn ? <Home/> : <Login userLoggedIn={this.userLoggedIn} />}></Route>
           <Route exact path="/spaces" element={<Spaces />}></Route>
-          <Route exact path="/pesucoin" element={<PesuCoin />}></Route>
+          <Route exact path="/pesucoin" element={<PesuCoin userName={this.state.name} userEmail={this.state.email} />}></Route>
           <Route exact path="/contact" element={<Contact />}></Route>
         </Routes>
       </Router>

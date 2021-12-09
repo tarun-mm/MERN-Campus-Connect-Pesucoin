@@ -15,8 +15,8 @@ class Login extends React.Component {
       .then((res) => {
         // console.log(res.data.message);
         // console.log(res.data.user);
-        if (res.data.message == "Login Successful") {
-          this.props.userLoggedIn(res.data.user.email);
+        if (res.data.message === "Login Successful") {
+          this.props.userLoggedIn(res.data.user.name, res.data.user.email);
         } else {
           alert(res.data.message);
         }
