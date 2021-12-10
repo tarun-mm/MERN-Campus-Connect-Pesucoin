@@ -31,7 +31,7 @@ class PesuCoin extends React.Component {
         email: this.props.userEmail,
       })
       .then((res) => {
-        console.log(res.data.transactions);
+        // console.log(res.data.transactions);
         this.setState({
           transactions: res.data.transactions.reverse(),
         });

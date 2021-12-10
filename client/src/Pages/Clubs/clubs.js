@@ -1,0 +1,80 @@
+import "../../Default/CSS/theme.css";
+
+import NavBar from "../../Default/NavBar/navBar";
+import React from "react";
+import axios from "axios";
+import collect from "collect";
+
+class Clubs extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      index: 0,
+      club_elems: [],
+    };
+  }
+
+  componentDidMount = () => {
+    axios.post("http://localhost:5000/clubs").then((res) => {
+      this.setState({
+        club_elems: res.data.clubs,
+      });
+    });
+  };
+
+  handleChange = (event) => {
+    // console.log(event.target.value)
+    // console.log(this.state.club_elems);
+    this.setState({
+      index: parseInt(event.target.value),
+    });
+  };
+
+  render() {
+    return (
+      <>
+        <nav className="navbar">
+          <NavBar userLoggedIn={this.props.userLoggedIn} />
+        </nav>
+        <section id="section" className="section">
+          <div className="box-main">
+            <div className="card">
+              <select
+                name="clubs"
+                id="clubSelect"
+                onChange={(e) => {
+                  this.handleChange(e);
+                }}
+              >
+                {this.state.club_elems &&
+                  this.state.club_elems.map((item, index) => {
+                    return (
+                      <option key={index.toString()} value={index}>
+                        {item["name"]}
+                      </option>
+                    );
+                  })}
+              </select>
+            </div>
+
+            <div style={{ height: "32px" }}></div>
+
+            <div className="card">
+              {this.state.club_elems &&
+                this.state.club_elems.map((item, index) => {
+                  if (index == this.state.index)
+                    return (
+                      <option key={index.toString()} value={index}>
+                        {item["name"]}
+                      </option>
+                    );
+                })}
+            </div>
+          </div>
+        </section>
+      </>
+    );
+  }
+}
+
+export default Clubs;

@@ -26,6 +26,14 @@ const userSchema = new mongoose.Schema({
 });
 const User = new mongoose.model("User", userSchema);
 
+// Clubs
+const clubSchema = new mongoose.Schema({
+  name: String,
+  domain: String,
+  desc: String
+})
+const Club = new mongoose.model("club", clubSchema);
+
 // Spaces
 const spaceSchema = new mongoose.Schema({
   space_name: String,
@@ -111,6 +119,13 @@ app.post("/register", (req, res) => {
     }
   });
 });
+
+app.post("/clubs", (req, res) => {
+  Club.find({}, (err, docs) => {
+    if (err) console.log(err)
+    else res.send({ clubs: docs })
+  })
+})
 
 app.post("/spaces", (req, res) => {
   Space.find({}, (err, docs) => {
