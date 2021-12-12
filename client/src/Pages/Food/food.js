@@ -22,7 +22,7 @@ class Food extends React.Component {
         email: this.props.userEmail,
       })
       .then((res) => {
-        if (price > res.data.coins) alert("Get some friggin money bishh");
+        if (price > res.data.coins) alert("You have run out of PesuCoins");
         else {
           // console.log(res.data)
           axios

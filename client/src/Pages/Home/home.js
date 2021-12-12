@@ -13,7 +13,7 @@ class Home extends React.Component {
         <section id="section" className="sectionregister">
           <div className="box-main">
             <div className="card" onClick={this.click}>
-              <h1 className="paraHeading">Welcome To Campus Connect</h1>
+              <h1 className="header">Welcome To Campus Connect</h1>
             </div>
             <br />
             <div className="card">

@@ -68,7 +68,7 @@ class Clubs extends React.Component {
                     <div key = {item["_id"]}>
                       <span className="paraHeading">{item["name"]}</span><br />
                       <div style={{ height: "16px" }}></div>
-                      <span className="paraTextBold">Domain: </span>&emsp;&emsp;&emsp;
+                      <span className="paraTextBold">Domain: </span>
                       <span className="paraText">{item["domain"]}</span><br />
                       <div style={{ height: "8px" }}></div>
                       <span className="paraTextBold">Description: </span><br />

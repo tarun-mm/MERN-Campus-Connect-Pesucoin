@@ -27,7 +27,7 @@ class Contact extends React.Component {
         <nav className="navbar">
           <NavBar userLoggedIn={this.props.userLoggedIn} />
         </nav>
-        <section id="section" className="section">
+        <section id="section" className="sectionregister">
           <div className="box-main">
             <div className="card">
               <span className="paraHeading">Contact Us</span>

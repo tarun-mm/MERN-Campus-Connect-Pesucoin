@@ -6,6 +6,13 @@
   padding-top: 5%;
 }
 
+.header{
+  color: #212121;
+  font-size: xx-large;
+  font-family: Lato, Inter;
+  font-weight: 600;
+}
+
 .paraHeading{
   color: #212121;
   font-size: x-large;
