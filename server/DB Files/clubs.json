@@ -9,7 +9,21 @@
   "_id": {
     "$oid": "61b2c76902b24e6d6b87493d"
   },
-  "name": "BAlcoding",
+  "name": "Appex",
   "domain": "Tech",
-  "desc": "Competitve Coding"
+  "desc": "App Development"
+},{
+  "_id": {
+    "$oid": "61b60743f2d433558fd153c1"
+  },
+  "name": "Ninaada",
+  "desc": "Music Club",
+  "domain": "Art"
+},{
+  "_id": {
+    "$oid": "61b607fcf2d433558fd153c2"
+  },
+  "desc": "Photography Club",
+  "domain": "Art",
+  "name": "Pixels"
 }]
