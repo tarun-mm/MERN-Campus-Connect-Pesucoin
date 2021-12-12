@@ -39,7 +39,7 @@ class Spaces extends React.Component {
             {this.state.space_elems &&
               this.state.space_elems.map((item, index) => {
                 var marLeft = "1%";
-                console.log(index);
+                // console.log(index);
                 return (
                   <>
                     <div

@@ -20,7 +20,7 @@ class PesuCoin extends React.Component {
         email: this.props.userEmail,
       })
       .then((res) => {
-        // console.log(res.data.coins)
+        // console.log(res.data)
         this.setState({
           userCoins: res.data.coins,
         });

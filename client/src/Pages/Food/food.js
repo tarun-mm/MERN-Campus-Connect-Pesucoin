@@ -15,6 +15,7 @@ class Food extends React.Component {
     }
 
     // console.log(price)
+    // console.log(typeof(price))
 
     axios
       .post("http://localhost:5000/pesucoin", {
@@ -23,15 +24,16 @@ class Food extends React.Component {
       .then((res) => {
         if (price > res.data.coins) alert("Get some friggin money bishh");
         else {
+          // console.log(res.data)
           axios
             .post("http://localhost:5000/transactions/insert", {
               email: this.props.userEmail,
-              coinsTot: res.data.coins,
+              coinsTot: parseInt(res.data.coins),
               coinsSpent: price,
-              orderNo: res.data.numOrders,
+              orderNo: parseInt(res.data.numOrders),
             })
-            .then((res) => {
-              alert(res.data.message)
+            .then((ress) => {
+              alert(ress.data.message)
             });
         }
       });
