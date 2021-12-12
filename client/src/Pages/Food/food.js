@@ -58,7 +58,7 @@ class Food extends React.Component {
                 <input type="checkbox" name="item1" value="35" />
                 <br />
                 <span className="paraText">Amt: 35 PesuCoin</span>
-                <span className="checkmark" />
+                
               </div>
               <div style={{ height: "8px" }}></div>
 
@@ -67,7 +67,7 @@ class Food extends React.Component {
                 <input type="checkbox" name="item2" value="27" />
                 <br />
                 <span className="paraText">Amt: 27 PesuCoin</span>
-                <span className="checkmark" />
+                
               </div>
               <div style={{ height: "8px" }}></div>
 
@@ -76,7 +76,7 @@ class Food extends React.Component {
                 <input type="checkbox" name="item3" value="25" />
                 <br />
                 <span className="paraText">Amt: 25 PesuCoin</span>
-                <span className="checkmark" />
+                
               </div>
               <div style={{ height: "8px" }}></div>
             </div>
@@ -87,7 +87,7 @@ class Food extends React.Component {
                 <input type="checkbox" name="item4" value="30" />
                 <br />
                 <span className="paraText">Amt: 30 PesuCoin</span>
-                <span className="checkmark" />
+                
               </div>
               <div style={{ height: "8px" }}></div>
 
@@ -96,7 +96,7 @@ class Food extends React.Component {
                 <input type="checkbox" name="item5" value="35" />
                 <br />
                 <span className="paraText">Amt: 35 PesuCoin</span>
-                <span className="checkmark" />
+                
               </div>
               <div style={{ height: "8px" }}></div>
 
@@ -105,7 +105,7 @@ class Food extends React.Component {
                 <input type="checkbox" name="item6" value="40" />
                 <br />
                 <span className="paraText">Amt: 40 PesuCoin</span>
-                <span className="checkmark" />
+                
               </div>
               <div style={{ height: "8px" }}></div>
             </div>
@@ -116,7 +116,7 @@ class Food extends React.Component {
                 <input type="checkbox" name="item7" value="55" />
                 <br />
                 <span className="paraText">Amt: 55 PesuCoin</span>
-                <span className="checkmark" />
+                
               </div>
               <div style={{ height: "8px" }}></div>
 
@@ -127,7 +127,7 @@ class Food extends React.Component {
                 <input type="checkbox" name="item8" value="25" />
                 <br />
                 <span className="paraText">Amt: 25 PesuCoin</span>
-                <span className="checkmark" />
+                
               </div>
               <div style={{ height: "8px" }}></div>
 
@@ -138,7 +138,7 @@ class Food extends React.Component {
                 <input type="checkbox" name="item9" value="35" />
                 <br />
                 <span className="paraText">Amt: 35 PesuCoin</span>
-                <span className="checkmark" />
+                
               </div>
               <div style={{ height: "8px" }}></div>
             </div>
@@ -149,7 +149,7 @@ class Food extends React.Component {
                 <input type="checkbox" name="item10" value="55" />
                 <br />
                 <span className="paraText">Amt: 55 PesuCoin</span>
-                <span className="checkmark" />
+                
               </div>
               <div style={{ height: "8px" }}></div>
 
@@ -158,7 +158,7 @@ class Food extends React.Component {
                 <input type="checkbox" name="item11" value="65" />
                 <br />
                 <span className="paraText">Amt: 65 PesuCoin</span>
-                <span className="checkmark" />
+                
               </div>
               <div style={{ height: "64px" }}></div>
 

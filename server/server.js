@@ -87,7 +87,7 @@ app.post("/login", (req, res) => {
 
 app.post("/register", (req, res) => {
   const { name, email, password } = req.body;
-  var coins = 0,
+  var coins = 500,
     numOrders = 0;
   User.findOne({ email: email }, (err, user) => {
     if (user) {

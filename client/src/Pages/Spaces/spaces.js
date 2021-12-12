@@ -8,11 +8,7 @@ class Spaces extends React.Component {
   constructor() {
     super();
     this.state = {
-      space_elems: [
-        [10, 20, 30, 40, 50],
-        [10, 20, 30, 40, 50],
-        [10, 20, 30, 40, 50],
-      ],
+      space_elems: [[], [], [],],
     };
   }
 

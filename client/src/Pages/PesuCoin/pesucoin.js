@@ -53,7 +53,7 @@ class PesuCoin extends React.Component {
               <span>&emsp;&emsp;</span>
               <span className="paraTextBold">Wallet: </span>
               <span className="paraText">{this.state.userCoins}</span>
-              <span className="paraText"> PesuCoins</span>
+              <span className="paraText"> PesuCoin</span>
             </div>
 
             <div style={{ height: "16px" }}></div>
