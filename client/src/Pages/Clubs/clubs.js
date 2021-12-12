@@ -3,7 +3,6 @@ import "../../Default/CSS/theme.css";
 import NavBar from "../../Default/NavBar/navBar";
 import React from "react";
 import axios from "axios";
-import collect from "collect";
 
 class Clubs extends React.Component {
   constructor(props) {
@@ -16,6 +15,7 @@ class Clubs extends React.Component {
 
   componentDidMount = () => {
     axios.post("http://localhost:5000/clubs").then((res) => {
+      // console.log(res.data.clubs)
       this.setState({
         club_elems: res.data.clubs,
       });
@@ -40,6 +40,7 @@ class Clubs extends React.Component {
           <div className="box-main">
             <div className="card">
               <select
+              className="paraTextBold selection"
                 name="clubs"
                 id="clubSelect"
                 onChange={(e) => {
@@ -49,7 +50,7 @@ class Clubs extends React.Component {
                 {this.state.club_elems &&
                   this.state.club_elems.map((item, index) => {
                     return (
-                      <option key={index.toString()} value={index}>
+                      <option className="paraText" key={index.toString()} value={index}>
                         {item["name"]}
                       </option>
                     );
@@ -60,15 +61,22 @@ class Clubs extends React.Component {
             <div style={{ height: "32px" }}></div>
 
             <div className="card">
-              {this.state.club_elems &&
+              {
+                this.state.club_elems &&
                 this.state.club_elems.map((item, index) => {
-                  if (index == this.state.index)
-                    return (
-                      <option key={index.toString()} value={index}>
-                        {item["name"]}
-                      </option>
-                    );
-                })}
+                  if(index === this.state.index) return (
+                    <div key = {item["_id"]}>
+                      <span className="paraHeading">{item["name"]}</span><br />
+                      <div style={{ height: "16px" }}></div>
+                      <span className="paraTextBold">Domain: </span>&emsp;&emsp;&emsp;
+                      <span className="paraText">{item["domain"]}</span><br />
+                      <div style={{ height: "8px" }}></div>
+                      <span className="paraTextBold">Description: </span><br />
+                      <span className="paraText">{item["desc"]}</span>
+                    </div>
+                  );
+                })
+              }
             </div>
           </div>
         </section>

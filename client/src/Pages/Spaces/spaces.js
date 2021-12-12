@@ -53,6 +53,7 @@ class Spaces extends React.Component {
                     >
                       <span className="paraHeading">{item["space_name"]}</span>
                       <br />
+                      <div style={{ height: "16px" }}></div>
                       <span className="paraTextBold">Venue:</span>&nbsp;&emsp;
                       <span className="paraText">{item["venue"]}</span>
                       <br />

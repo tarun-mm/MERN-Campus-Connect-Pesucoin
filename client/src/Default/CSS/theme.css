@@ -12,6 +12,7 @@
   font-family: Lato, Inter;
   font-weight: 600;
 }
+
 .paraHeadingLight
 { color:#CBB36B;
   font-size: x-large;
@@ -27,6 +28,7 @@
   font-family: Lato, Inter;
   font-weight: 400;
 }
+
 .paraTextBold{
   color: #212121;
   font-size: medium;
@@ -68,6 +70,7 @@
   top: 0;
   position: sticky;
 }
+
 .button{
   background-color: #282828;
   color: white;
@@ -77,6 +80,7 @@
   cursor: pointer;
 
 }
+
 .buttonLight{
   background-color: #ccc;
   color: #282828;
@@ -89,6 +93,7 @@
 .button :hover{
   background-color: #212121;
 }
+
 .input{
   width: 100%; 
   padding: 12px;  
@@ -98,6 +103,13 @@
   margin-top: 6px; 
   margin-bottom: 16px; 
   resize: vertical
+}
+
+.selection{
+  width: 100%;
+  margin: auto;
+  padding: 8px;
+  border-radius: 4px;
 }
 
 @media only screen and (max-width: 1200px){
