@@ -1,6 +1,6 @@
 # PesuCoin Website
 
-### Database used in MongoDB
+### Database used : MongoDB
 All collection files are in /server/DB Files
 Load them into campus_connect database
 
