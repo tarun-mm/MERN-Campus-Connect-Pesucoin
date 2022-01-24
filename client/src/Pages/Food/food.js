@@ -54,7 +54,7 @@ class Food extends React.Component {
           <form onSubmit={this.handleBuy}>
             <div className="box-main">
               <div className="card">
-                <label className="paraTextBold">Margherita &nbsp;</label>
+                <label className="paraTextBold">Idli Vada &nbsp;</label>
                 <input type="checkbox" name="item1" value="35" />
                 <br />
                 <span className="paraText">Amt: 35 PesuCoin</span>
@@ -63,7 +63,7 @@ class Food extends React.Component {
               <div style={{ height: "8px" }}></div>
 
               <div className="card">
-                <label className="paraTextBold">Formaggio &nbsp;</label>
+                <label className="paraTextBold">Masala Dosa &nbsp;</label>
                 <input type="checkbox" name="item2" value="27" />
                 <br />
                 <span className="paraText">Amt: 27 PesuCoin</span>
@@ -72,7 +72,7 @@ class Food extends React.Component {
               <div style={{ height: "8px" }}></div>
 
               <div className="card">
-                <label className="paraTextBold">Chicken &nbsp;</label>
+                <label className="paraTextBold">Fruit juice &nbsp;</label>
                 <input type="checkbox" name="item3" value="25" />
                 <br />
                 <span className="paraText">Amt: 25 PesuCoin</span>
@@ -83,7 +83,7 @@ class Food extends React.Component {
 
             <div className="box-main">
               <div className="card">
-                <label className="paraTextBold">Pineapple'o'clock &nbsp;</label>
+                <label className="paraTextBold">Paneer Sandwich &nbsp;</label>
                 <input type="checkbox" name="item4" value="30" />
                 <br />
                 <span className="paraText">Amt: 30 PesuCoin</span>
@@ -92,7 +92,7 @@ class Food extends React.Component {
               <div style={{ height: "8px" }}></div>
 
               <div className="card">
-                <label className="paraTextBold">Meat Town Hot! &nbsp;</label>
+                <label className="paraTextBold">Paneer Roll &nbsp;</label>
                 <input type="checkbox" name="item5" value="35" />
                 <br />
                 <span className="paraText">Amt: 35 PesuCoin</span>
@@ -101,7 +101,7 @@ class Food extends React.Component {
               <div style={{ height: "8px" }}></div>
 
               <div className="card">
-                <label className="paraTextBold">Lasagna Popular &nbsp;</label>
+                <label className="paraTextBold">Veg Meals &nbsp;</label>
                 <input type="checkbox" name="item6" value="40" />
                 <br />
                 <span className="paraText">Amt: 40 PesuCoin</span>
@@ -112,7 +112,7 @@ class Food extends React.Component {
 
             <div className="box-main">
               <div className="card">
-                <label className="paraTextBold">Ravioli &nbsp;</label>
+                <label className="paraTextBold">Tandoori Chicken &nbsp;</label>
                 <input type="checkbox" name="item7" value="55" />
                 <br />
                 <span className="paraText">Amt: 55 PesuCoin</span>
@@ -122,7 +122,7 @@ class Food extends React.Component {
 
               <div className="card">
                 <label className="paraTextBold">
-                  Spaghetti Classica &nbsp;
+                  Egg Roll &nbsp;
                 </label>
                 <input type="checkbox" name="item8" value="25" />
                 <br />
@@ -133,7 +133,7 @@ class Food extends React.Component {
 
               <div className="card">
                 <label className="paraTextBold">
-                  Today's Soup Seasonal &nbsp;
+                  Day's Special &nbsp;
                 </label>
                 <input type="checkbox" name="item9" value="35" />
                 <br />
@@ -145,7 +145,7 @@ class Food extends React.Component {
 
             <div className="box-main">
               <div className="card">
-                <label className="paraTextBold">Bruschetta &nbsp;</label>
+                <label className="paraTextBold">Chicken Biryani &nbsp;</label>
                 <input type="checkbox" name="item10" value="55" />
                 <br />
                 <span className="paraText">Amt: 55 PesuCoin</span>
@@ -154,7 +154,7 @@ class Food extends React.Component {
               <div style={{ height: "8px" }}></div>
 
               <div className="card">
-                <label className="paraTextBold">Garlic bread &nbsp;</label>
+                <label className="paraTextBold">PESU Special &nbsp;</label>
                 <input type="checkbox" name="item11" value="65" />
                 <br />
                 <span className="paraText">Amt: 65 PesuCoin</span>
