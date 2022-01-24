@@ -35,10 +35,10 @@ class Contact extends React.Component {
               <span style={{ height: "16px" }}></span>
               <br />
               <span className="paraTextBold">Contact Number: &emsp;</span>
-              <span className="paraText">979786675656</span>
+              <span className="paraText">7892445981</span>
               <br />
               <span className="paraTextBold">Email Address: &emsp;&emsp;&nbsp;</span>
-              <span className="paraText">gg@gmail.com</span>
+              <span className="paraText">tarunsetty2002@gmail.com</span>
               <br />
               <span className="paraTextBold">Or else just drop your mail, we'll get back to you:){" "}</span>
               <br />
