@@ -2,12 +2,6 @@
 
 ### Database used : MongoDB
 
-### `cd server && node server.js`
-Runs the server which connects to a MongoDB database.
-
-### `cd client && npm start`
-Runs the website in development mode
-
 Here are some sample screenshots:
 
 ## Login
