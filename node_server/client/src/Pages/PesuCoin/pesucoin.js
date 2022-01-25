@@ -3,6 +3,7 @@ import "../../Default/CSS/theme.css";
 import NavBar from "../../Default/NavBar/navBar";
 import React from "react";
 import axios from "axios";
+import baseUrl from "../../Default/url";
 import logo from "./coin.svg";
 
 class PesuCoin extends React.Component {
@@ -16,7 +17,7 @@ class PesuCoin extends React.Component {
 
   componentDidMount = () => {
     axios
-      .post("http://localhost:5000/pesucoin", {
+      .post(baseUrl+"/pesucoin", {
         email: this.props.userEmail,
       })
       .then((res) => {
@@ -27,7 +28,7 @@ class PesuCoin extends React.Component {
       });
 
     axios
-      .post("http://localhost:5000/transactions/get", {
+      .post(baseUrl+"/transactions/get", {
         email: this.props.userEmail,
       })
       .then((res) => {

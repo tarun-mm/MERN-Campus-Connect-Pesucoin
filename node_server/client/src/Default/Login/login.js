@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import baseUrl from "../url";
 
 class Login extends React.Component {
   handleLogin = (event) => {
@@ -8,7 +9,7 @@ class Login extends React.Component {
     // console.log(email.value, pass.value);
 
     axios
-      .post("http://localhost:5000/login", {
+      .post(baseUrl+"/login", {
         email: email.value,
         password: pass.value,
       })
@@ -35,7 +36,7 @@ class Login extends React.Component {
       password.value === reEnterPassword.value
     ) {
       axios
-        .post("http://localhost:5000/register", {
+        .post(baseUrl+"/register", {
           name: name.value,
           email: email.value,
           password: password.value,

@@ -3,6 +3,7 @@ import "../../Default/CSS/theme.css";
 import NavBar from "../../Default/NavBar/navBar";
 import React from "react";
 import axios from "axios";
+import baseUrl from "../../Default/url";
 
 class Spaces extends React.Component {
   constructor() {
@@ -13,7 +14,7 @@ class Spaces extends React.Component {
   }
 
   componentDidMount = () => {
-    axios.post("http://localhost:5000/spaces").then((res) => {
+    axios.post(baseUrl+"/spaces").then((res) => {
       // console.log(res.data.spaces)
       this.setState({
         space_elems: res.data.spaces,

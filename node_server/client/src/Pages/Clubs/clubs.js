@@ -3,6 +3,7 @@ import "../../Default/CSS/theme.css";
 import NavBar from "../../Default/NavBar/navBar";
 import React from "react";
 import axios from "axios";
+import baseUrl from "../../Default/url";
 
 class Clubs extends React.Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Clubs extends React.Component {
   }
 
   componentDidMount = () => {
-    axios.post("http://localhost:5000/clubs").then((res) => {
+    axios.post(baseUrl+"/clubs").then((res) => {
       // console.log(res.data.clubs)
       this.setState({
         club_elems: res.data.clubs,

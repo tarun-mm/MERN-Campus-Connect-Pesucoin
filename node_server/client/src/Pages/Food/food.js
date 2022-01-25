@@ -3,6 +3,7 @@ import "../../Default/CSS/theme.css";
 import NavBar from "../../Default/NavBar/navBar";
 import React from "react";
 import axios from "axios";
+import baseUrl from "../../Default/url";
 
 class Food extends React.Component {
   handleBuy = (event) => {
@@ -18,7 +19,7 @@ class Food extends React.Component {
     // console.log(typeof(price))
 
     axios
-      .post("http://localhost:5000/pesucoin", {
+      .post(baseUrl+"/pesucoin", {
         email: this.props.userEmail,
       })
       .then((res) => {
@@ -26,7 +27,7 @@ class Food extends React.Component {
         else {
           // console.log(res.data)
           axios
-            .post("http://localhost:5000/transactions/insert", {
+            .post(baseUrl+"/transactions/insert", {
               email: this.props.userEmail,
               coinsTot: parseInt(res.data.coins),
               coinsSpent: price,

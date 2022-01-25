@@ -1,7 +1,8 @@
 var mongoose = require('mongoose');
+require('dotenv').config();
 
 mongoose.connect(
-  "mongodb+srv://admin:adminpass@cluster0.tbgwm.mongodb.net/campus_connect",
+  process.env.MONGODB_URI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,

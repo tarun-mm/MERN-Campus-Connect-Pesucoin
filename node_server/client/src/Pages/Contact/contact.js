@@ -3,6 +3,7 @@ import "../../Default/CSS/theme.css";
 import NavBar from "../../Default/NavBar/navBar";
 import React from "react";
 import axios from "axios"
+import baseUrl from "../../Default/url";
 
 class Contact extends React.Component {
   handleContactSubmit = (event) => {
@@ -10,7 +11,7 @@ class Contact extends React.Component {
     var { name, sem, email, query } = document.forms[0]
     // console.log(name.value, sem.value, email.value)
 
-    axios.post("http://localhost:5000/contact", {
+    axios.post(baseUrl+"/contact", {
       name: name.value,
       sem: sem.value,
       email: email.value,
